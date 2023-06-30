@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <script>
     // TODO: create a handler
-    let setSearchEngine = function () {
+    function setSearchEngine() {
       let actions = {
         google: "https://www.google.com/search",
         duckDuckGo: "https://duckduckgo.com/",
@@ -12,15 +12,18 @@
         ask: "https://www.ask.com/web",
       };
 
-      let submit = document.getElementById("submit");
-      let getRadio = document.querySelector("input[name=engine]:checked");
-      // let value = getRadio.value;
-      let action = actions[getRadio.value];
+      let form = document.getElementById("searchForm");
+
+      // let submit = document.getElementById("submit");
+
+      let getEngine = document.querySelector("input[name=engine]:checked");
+
+      let action = actions[getEngine.value];
 
       form.setAttribute("action", action);
 
       console.log("searchengine");
-    };
+    }
 
     window.addEventListener("load", function () {
       // TODO: register the handler
